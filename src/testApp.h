@@ -36,5 +36,6 @@ class testApp : public ofBaseApp{
     ofxKinect kinect;
    // ofVboMesh mesh;
     vector<particle> ps;
+    bool firstRun;
     
 };

@@ -14,8 +14,8 @@ particle::particle(ofVec3f _location){
     acceleration = ofVec3f(0,0,0);
     velocity = ofVec3f(0,0,0);
     location = _location;
-    maxspeed = ofRandom(1,10);
-    maxforce = ofRandom(0.1f,5);
+    maxspeed = ofRandom(3,10);
+    maxforce = ofRandom(0.1,0.4);
 }
 
 void particle::update(){
