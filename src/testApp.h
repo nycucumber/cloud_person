@@ -12,6 +12,7 @@
 #include "ofxKinect.h"
 #include "ofxOpenCv.h"
 #include "particle.h"
+#include "target.h"
 
 class testApp : public ofBaseApp{
 

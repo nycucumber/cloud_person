@@ -11,7 +11,7 @@ void testApp::setup(){
     kinect.open();
     
     
-    for(int i=0;i<5000;i++){
+    for(int i=0;i< 4000 ;i++){
         ps.push_back(ofVec3f(ofRandom(-300,300), ofRandom(-300,300),ofRandom(-300,300)));
     }
     
@@ -24,10 +24,13 @@ void testApp::update(){
 }
 //--------------------------------------------------------------
 void testApp::draw(){
+    if(kinect.isFrameNew()){
     ofMesh mesh;
     ofMesh kinectData;
     mesh.setMode(OF_PRIMITIVE_POINTS);
     cam.begin();
+    
+    
   //  ofSetPlaneResolution(5, 5);
   //  ofDrawPlane(0, 0, 800, ofGetWidth(), ofGetHeight());
     
@@ -44,64 +47,56 @@ void testApp::draw(){
     
     int w = 640;
     int h = 480;
-    int step = 3;
+    int step = 20;
     
-    vector<ofVec3f> particles;
+    vector<target> targets;
     
     for(int y=0;y<h;y+=step){
         for(int x=0;x<w;x+=step){
             if(kinect.getDistanceAt(x, y)>0&&kinect.getDistanceAt(x, y)<1000){
-                particles.push_back(ofVec3f(kinect.getWorldCoordinateAt(x, y)));
+                targets.push_back(ofVec3f(kinect.getWorldCoordinateAt(x, y)));
             }
         }
     }
     
+    
     //compare the amount between our Particle Vector and all kinect particles
-    while(particles.size() > ps.size()){
-        ps.push_back(ofVec3f(ofRandom(-300,300), ofRandom(-300,300),800));
-    }
-    
-    if(particles.size() < ps.size()){
-        int dvalue = ps.size() - particles.size();
-        ps.erase(ps.begin(),ps.begin()+dvalue);
-    }
-    
-//    
-//    //re-assign target
-//    for(int a=0; a<particles.size(); a++){
-//        for(int b=0; b<ps.size(); b++){
-//            
-//        }
+//    while(targets.size() > ps.size()){
+//        ps.push_back(ofVec3f(ofRandom(-300,300), ofRandom(-300,300),800));
 //    }
 //    
-    //seek target
-    for(int i=0;i<ps.size();i++){
-    }
-    
-    for(int i=0;i<ps.size();i++){
-//        float minDistance;
-//        for(int b=0;b<particles.size();b++){
-        
-//            vector<float> distances;
-//            distances.push_back(ps[i].location.distance(particles[b]));
-//            
+//    if(targets.size() < ps.size()){
+//        int dvalue = ps.size() - targets.size();
+//        ps.erase(ps.begin(),ps.begin()+dvalue);
+//    }
 
-            
-            ps[i].seek(particles[i]);
-            ps[i].update();
-            
-            mesh.addVertex(ps[i].getPosition());
-            
-//        }
+        
+    for(int i=0;i<ps.size();i++){
+        float minDistance = 100000;
+        float index = 0;
+        
+        for(int b=0;b<targets.size();b++){
+            float distance;
+            distance = ps[i].location.distance(targets[b].location);
+        //    cout<<distance<<endl;
+            if(distance < minDistance){
+                minDistance = distance;
+                index = b;
+            }
+        }
+       // cout<<"the "<<i<<"'th particle's"<<" minimum distance is "<<minDistance<<" .......his index in [targets] is: "<<index<<endl;
+        ps[i].seek(targets[index].location);
+        ps[i].update();
+        mesh.addVertex(ps[i].getPosition());
     }
-    
+        
     ofSetColor(0, 0, 0);
     mesh.draw();
     cam.end();
     
-    
-    cout<<particles.size()<<endl;  //particles amount
-    particles.clear();
+    cout<<targets.size()<<endl;  //particles amount
+    targets.clear();
+    }
 
 }
 

@@ -12,6 +12,7 @@
 		250A95BA26587BE85DB0A353 /* ofxCvColorImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE9C7160245B19131DAE6128 /* ofxCvColorImage.cpp */; };
 		255A7B680DC81E543C875794 /* usb_libusb10.c in Sources */ = {isa = PBXBuildFile; fileRef = 28F9707464BA3FF98E05096C /* usb_libusb10.c */; };
 		2F3938F41901D86D00AEC549 /* particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F3938F21901D86D00AEC549 /* particle.cpp */; };
+		2F3938F91904324B00AEC549 /* target.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F3938F71904324B00AEC549 /* target.cpp */; };
 		49BEEB2DFA5319D55AA6899F /* tilt.c in Sources */ = {isa = PBXBuildFile; fileRef = BF2F2AA872288D30F53983EF /* tilt.c */; };
 		63020F16C7E8DED980111241 /* ofxCvImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6151136D101F857DAE12722 /* ofxCvImage.cpp */; };
 		686B0DF6249B52E1A85B39EC /* ofxKinect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7ED9FFC7D08DA194C2CE7D09 /* ofxKinect.cpp */; };
@@ -89,6 +90,8 @@
 		2E411F99E3AB7154484B4F96 /* kmeans_index.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = kmeans_index.h; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/flann/kmeans_index.h; sourceTree = SOURCE_ROOT; };
 		2F3938F21901D86D00AEC549 /* particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = particle.cpp; sourceTree = "<group>"; };
 		2F3938F31901D86D00AEC549 /* particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = particle.h; sourceTree = "<group>"; };
+		2F3938F71904324B00AEC549 /* target.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = target.cpp; sourceTree = "<group>"; };
+		2F3938F81904324B00AEC549 /* target.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = target.h; sourceTree = "<group>"; };
 		30884ECD9C171AB1B1BDFC3F /* cv.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = cv.hpp; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv/cv.hpp; sourceTree = SOURCE_ROOT; };
 		319268D200F1BA567E4CCFF9 /* cxeigen.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = cxeigen.hpp; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv/cxeigen.hpp; sourceTree = SOURCE_ROOT; };
 		33FF03222909C1A0ECE43753 /* cv.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = cv.h; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv/cv.h; sourceTree = SOURCE_ROOT; };
@@ -619,6 +622,8 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				2F3938F71904324B00AEC549 /* target.cpp */,
+				2F3938F81904324B00AEC549 /* target.h */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* testApp.h */,
@@ -771,6 +776,7 @@
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				2F3938F41901D86D00AEC549 /* particle.cpp in Sources */,
+				2F3938F91904324B00AEC549 /* target.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
 				686B0DF6249B52E1A85B39EC /* ofxKinect.cpp in Sources */,
 				ACE7DC9A3223ED5EE1B80074 /* cameras.c in Sources */,
