@@ -15,8 +15,12 @@ particle::particle(ofVec3f _location){
     velocity = ofVec3f(0,0,0);
     location = _location;
     maxspeed = ofRandom(3,10);
+//    maxspeed = 20;
     maxforce = ofRandom(0.1,0.4);
+//    maxforce = 10;
+    target_assigned = false;
 }
+
 
 void particle::update(){
     velocity += acceleration;
@@ -37,7 +41,6 @@ void particle::seek(ofVec3f target){
     ofVec3f steer = desired - velocity;
     steer.limit(maxforce);
     acceleration += steer;
-    
 }
 
 

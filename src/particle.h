@@ -31,6 +31,7 @@ public:
     ofVec3f acceleration;
     float maxforce;
     float maxspeed;
+    bool target_assigned;
     //tail
   //  vector<ofVec3f> history;
     

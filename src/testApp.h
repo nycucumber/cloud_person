@@ -13,6 +13,7 @@
 #include "ofxOpenCv.h"
 #include "particle.h"
 #include "target.h"
+#include "ofxUI.h"
 
 class testApp : public ofBaseApp{
 
@@ -37,5 +38,11 @@ class testApp : public ofBaseApp{
    // ofVboMesh mesh;
     vector<particle> ps;
     bool firstRun;
+    float meditationLevel;
+    //UI
+    ofxUICanvas * gui;
+    void exitUI();
+    void guiEvent(ofxUIEventArgs &e);
+    
     
 };
