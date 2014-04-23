@@ -14,6 +14,11 @@
 #include "particle.h"
 #include "target.h"
 #include "ofxUI.h"
+#include "ofxOsc.h"
+
+// listen on port 12345
+#define PORT 4444
+#define NUM_MSG_STRINGS 20
 
 class testApp : public ofBaseApp{
 
@@ -43,6 +48,9 @@ class testApp : public ofBaseApp{
     ofxUICanvas * gui;
     void exitUI();
     void guiEvent(ofxUIEventArgs &e);
+    
+    //osc
+    ofxOscReceiver receiver;
     
     
 };

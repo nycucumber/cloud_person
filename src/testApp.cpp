@@ -17,20 +17,32 @@ void testApp::setup(){
     gui->addSlider("Meditation_Level",0.0,100.0,100.0);
     gui->autoSizeToFitWidgets();
     ofAddListener(gui->newGUIEvent, this, &testApp::guiEvent);
+//    ofToggleFullscreen();
     
+    
+    //osc:::::
+    receiver.setup(PORT);
     
 }
-
 //--------------------------------------------------------------
 void testApp::update(){
     kinect.update();
+    while (receiver.hasWaitingMessages()) {
+        ofxOscMessage m;
+        receiver.getNextMessage(&m);
+        if (m.getAddress() == "/meditation") {
+           // cout<<m.getArgAsFloat(0)<<endl;
+           meditationLevel = ofMap(m.getArgAsFloat(0), 0, 100, 0, 120);
+        cout<<meditationLevel<<endl;
+        }
+    }
 }
 //--------------------------------------------------------------
 void testApp::draw(){
     if(kinect.isFrameNew()){
         cam.begin();
         
-        if(meditationLevel>=80){
+        if(meditationLevel>=90){
             ofMesh mesh;
             ofMesh kinectData;
             kinectData.setMode(OF_PRIMITIVE_POINTS);
@@ -43,7 +55,6 @@ void testApp::draw(){
                 for(int x=0;x<w;x+=step){
                     if(kinect.getDistanceAt(x, y)>0&&kinect.getDistanceAt(x, y)<1500){
                         mesh.addVertex(ofVec3f(kinect.getWorldCoordinateAt(x, y)));
-                        
                     }
                 }
             }
@@ -100,6 +111,9 @@ void testApp::draw(){
                 ps[i].target_assigned = true;
                 targets[index].choosen = true;
                 ps[i].update();
+                //adjust movement parameter based on Meditation Level
+                ps[i].maxforce = ofMap(meditationLevel, 0, 90, 0.001, 5);
+                ps[i].maxspeed = ofMap(meditationLevel, 0, 90, 20, 5);
                 mesh.addVertex(ps[i].getPosition());
                 
             }
@@ -132,7 +146,7 @@ void testApp::draw(){
             //==================JUST DRAW===============
             ofPushMatrix();
             ofSetColor(0, 0, 0);
-            ofScale(1, -1,1);
+            ofScale(1,-1,1);
             mesh.draw();
             ofPopMatrix();
             
@@ -170,11 +184,7 @@ void testApp::guiEvent(ofxUIEventArgs &e)
         ofxUISlider *slider = e.getSlider();
         meditationLevel = slider->getScaledValue();
     }
-    
-    
-    
 }
-
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
     
