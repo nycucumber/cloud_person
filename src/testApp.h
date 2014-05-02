@@ -15,6 +15,7 @@
 #include "target.h"
 #include "ofxUI.h"
 #include "ofxOsc.h"
+#include "ofVbo.h"
 
 // listen on port 12345
 #define PORT 4444
@@ -51,6 +52,13 @@ class testApp : public ofBaseApp{
     
     //osc
     ofxOscReceiver receiver;
+    
+    
+    //shader
+    ofShader billboardShader;
+    ofImage texture;
+    
+    ofVboMesh billboards;
     
     
 };

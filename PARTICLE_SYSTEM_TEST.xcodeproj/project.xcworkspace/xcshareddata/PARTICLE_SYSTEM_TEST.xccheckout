@@ -5,14 +5,14 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>6F49C351-A5D5-4B19-A5FE-F7BCCE311DED</string>
+	<string>8672A961-D7BD-409F-86FE-DCAD87789D11</string>
 	<key>IDESourceControlProjectName</key>
 	<string>PARTICLE_SYSTEM_TEST</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>12E9403E-E2C3-4B28-9481-69E2D3FC22D3</key>
 		<string>https://github.com/nycucumber/cloud_person.git</string>
-		<key>22E08943-A51C-4465-9CE3-21E6C884BEFE</key>
+		<key>6CD8F5E2-23F7-4B39-920B-B47D80B00F43</key>
 		<string>https://github.com/obviousjim/ofxOculusRift.git</string>
 		<key>7503DD3A-178F-403A-AC49-97891D914C92</key>
 		<string>https://github.com/rezaali/ofxUI.git</string>
@@ -23,17 +23,17 @@
 	<dict>
 		<key>12E9403E-E2C3-4B28-9481-69E2D3FC22D3</key>
 		<string>../..</string>
-		<key>22E08943-A51C-4465-9CE3-21E6C884BEFE</key>
+		<key>6CD8F5E2-23F7-4B39-920B-B47D80B00F43</key>
 		<string>../../..</string>
 		<key>7503DD3A-178F-403A-AC49-97891D914C92</key>
 		<string>../../../../../addons/ofxUI</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/nycucumber/cloud_person.git</string>
+	<string>https://github.com/obviousjim/ofxOculusRift.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>22E08943-A51C-4465-9CE3-21E6C884BEFE</string>
+	<string>6CD8F5E2-23F7-4B39-920B-B47D80B00F43</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -56,7 +56,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>22E08943-A51C-4465-9CE3-21E6C884BEFE</string>
+			<string>6CD8F5E2-23F7-4B39-920B-B47D80B00F43</string>
 			<key>IDESourceControlWCCName</key>
 			<string>thesis</string>
 		</dict>

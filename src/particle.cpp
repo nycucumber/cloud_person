@@ -27,11 +27,6 @@ void particle::update(){
     velocity.limit(maxspeed);
     location += velocity;
     acceleration = acceleration * 0;
-    //tail
-//    history.push_back(location);
-//    if(history.size()>100){
-//        history.erase(history.begin());
-//    }
 }
 
 void particle::seek(ofVec3f target){
